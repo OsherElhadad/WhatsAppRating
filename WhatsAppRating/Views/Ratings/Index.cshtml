@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WhatsAppRating.Models.Rating>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create"><button class="btn btn-success">Create New</button></a>
+</p>
+
+<p>
+    <input type="text" id="search_input" />
+</p>
+
+<div class="accordion accordion-flush" id="accordionFlush">
+  @foreach (var item in Model) {
+  <div class="accordion-item">
+      <div class="container">
+          <div class="row">
+    <h2 class="accordion-header col-9" id="flush-heading-@item.Id">
+      <button class="accordion-button collapsed text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-@item.Id" aria-expanded="false" aria-controls="flush-collapse-@item.Id">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Nickname):</th>
+                    <td>@Html.DisplayFor(modelItem => item.Nickname)</td>
+                    <th>@Html.DisplayNameFor(model => model.Rate):</th>
+                    <td>@Html.DisplayFor(modelItem => item.Rate)</td>
+                </tr>
+            </thead>
+        </table>
+      </button>
+    </h2>
+    <div class="col">
+    <a asp-action="Edit" asp-route-id="@item.Id"><button class="btn btn-secondary">Edit</button></a>
+      <a asp-action="Details" asp-route-id="@item.Id"><button class="btn btn-info">Details</button></a>
+      <a asp-action="Delete" asp-route-id="@item.Id"><button class="btn btn-danger">Delete</button></a>
+      </div>
+      </div>
+      </div>
+    <div id="flush-collapse-@item.Id" class="accordion-collapse collapse" aria-labelledby="flush-heading-@item.Id" data-bs-parent="#accordionFlush">
+      <div class="accordion-body">
+          <p>
+              <h5>@Html.DisplayNameFor(model => model.Description):</h5>
+              @Html.DisplayFor(modelItem => item.Description)
+          </p>
+          <h5>@Html.DisplayNameFor(model => model.Time):</h5>
+          <code>@Html.DisplayFor(modelItem => item.Time)</code>
+      </div>
+    </div>
+  </div>
+  }
+</div>
+
+@section Scripts {
+    <script type="text/html" id="template">
+        
+    </script>
+
+    <script src="~/js/search.js"></script>
+}
