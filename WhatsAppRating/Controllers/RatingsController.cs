@@ -28,14 +28,14 @@ namespace WhatsAppRating.Controllers
 
         public async Task<IActionResult> Search(string query)
         {
-            if (query == null)
-            {
-                return Json(null);
-            }
             var ratings = await _context.Ratings.ToListAsync();
             if (ratings == null)
             {
                 return Json(null);
+            }
+            if (query == null)
+            {
+                return Json(ratings);
             }
             var q = ratings.Where(rating => rating.Nickname.ToLower().Contains(query.ToLower())
                                                      || rating.Description.ToLower().Contains(query.ToLower()));
