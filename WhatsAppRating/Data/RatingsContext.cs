@@ -5,7 +5,7 @@ namespace WhatsAppRating.Data
 {
     public class RatingsContext : DbContext
     {
-        private const string connectionString = "server=localhost;port=3306;database=WhatsAppDataBase;user=root;password=Osh841998";
+        private const string connectionString = "server=localhost;port=3306;database=WhatsAppRatingDB;user=root;password=Osh841998";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
