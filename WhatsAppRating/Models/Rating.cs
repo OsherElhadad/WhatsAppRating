@@ -9,7 +9,7 @@ namespace WhatsAppRating.Models
         [Required]
         [StringLength(100)]
         [RegularExpression(@"^(?!\s*$).+$")]
-        public string Nickname { get; set; }
+        public string? Nickname { get; set; }
 
         [Required]
         [Range(1, 5)]

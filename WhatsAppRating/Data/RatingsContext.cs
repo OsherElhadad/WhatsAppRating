@@ -19,6 +19,6 @@ namespace WhatsAppRating.Data
             modelBuilder.Entity<Rating>().HasKey(e => e.Id);
         }
 
-        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Rating>? Ratings { get; set; }
     }
 }

@@ -1,58 +1,74 @@
 ﻿@model IEnumerable<WhatsAppRating.Models.Rating>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Ratings";
 }
+<h1 class="text-center">Ratings</h1>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create"><button class="btn btn-success">Create New</button></a>
+<p class="text-center">
+    <a href="http://localhost:3000"><button class="btn btn-outline-light btn-lg px-5">Go to WhatsApp</button></a>
 </p>
 
-<p>
-    <input type="text" id="search_input" />
+<p class="text-center">
+    <a asp-action="Create"><button class="btn btn-outline-light btn-lg px-5">Create New Rate</button></a>
+</p>
+
+<p class="text-center text-white">
+    Average:
+    @{
+        var average = 0.0;
+        foreach (Rating rating in Model)
+        {
+            average += rating.Rate;
+        }
+        average = average / Model.Count();
+    }
+    @String.Format("{0:0.00}", average)
+</p>
+
+<p class="text-center">
+    <input type="text" id="search_input" placeholder="Search by Nickname/Description" autoFocus />
 </p>
 <div class="accordion accordion-flush" id="accordionFlush"></div>
 
 @section Scripts {
 
     <script type="text/html" id="template">
-        <div class="accordion-item">
-      <div class="container">
-          <div class="row">
-    <h2 class="accordion-header col-9" id="flush-heading-{id}">
-      <button class="accordion-button collapsed text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{id}" aria-expanded="false" aria-controls="flush-collapse-{id}">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>{nicknameKey}:</th>
-                    <td>{nickname}</td>
-                    <th>{rateKey}:</th>
-                    <td>{rate}</td>
-                </tr>
-            </thead>
-        </table>
-      </button>
-    </h2>
-    <div class="col">
-    <a asp-action="Edit" asp-route-id="{id}"><button class="btn btn-secondary">Edit</button></a>
-      <a asp-action="Details" asp-route-id="{id}"><button class="btn btn-info">Details</button></a>
-      <a asp-action="Delete" asp-route-id="{id}"><button class="btn btn-danger">Delete</button></a>
-      </div>
-      </div>
-      </div>
-    <div id="flush-collapse-{id}" class="accordion-collapse collapse" aria-labelledby="flush-heading-{id}" data-bs-parent="#accordionFlush">
-      <div class="accordion-body">
-          <p>
-              <h5>{descriptionKey}:</h5>
-              {description}
-          </p>
-          <h5>{timeKey}:</h5>
-          <code>{time}</code>
-      </div>
-    </div>
-  </div>
+              <div class="accordion-item card">
+            <div class="container">
+                <div class="row">
+          <h2 class="accordion-header col-9" id="flush-heading-{id}">
+            <button class="accordion-button collapsed text-center card" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{id}" aria-expanded="false" aria-controls="flush-collapse-{id}">
+              <table class="table text-white">
+                  <thead>
+                      <tr>
+                          <th>{nicknameKey}:</th>
+                          <td>{nickname}</td>
+                          <th>{rateKey}:</th>
+                          <td>{rate}</td>
+                      </tr>
+                  </thead>
+              </table>
+            </button>
+          </h2>
+          <div class="col">
+          <a asp-action="Edit" asp-route-id="{id}"><button class="btn btn-secondary">Edit</button></a>
+            <a asp-action="Details" asp-route-id="{id}"><button class="btn btn-info">Details</button></a>
+            <a asp-action="Delete" asp-route-id="{id}"><button class="btn btn-danger">Delete</button></a>
+            </div>
+            </div>
+            </div>
+          <div id="flush-collapse-{id}" class="accordion-collapse collapse" aria-labelledby="flush-heading-{id}" data-bs-parent="#accordionFlush">
+            <div class="accordion-body text-white">
+                <p>
+                    <h5>{descriptionKey}:</h5>
+                    {description}
+                </p>
+                <h5>{timeKey}:</h5>
+                <code>{time}</code>
+            </div>
+          </div>
+        </div>
     </script>
     <script src="~/js/search.js"></script>
 }

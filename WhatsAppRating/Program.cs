@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<RatingsContext>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

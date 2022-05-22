@@ -37,8 +37,10 @@ namespace WhatsAppRating.Controllers
             {
                 return Json(ratings);
             }
-            var q = ratings.Where(rating => rating.Nickname.ToLower().Contains(query.ToLower())
-                                                     || rating.Description.ToLower().Contains(query.ToLower()));
+            var q = ratings.Where(rating => (rating.Nickname != null &&
+                                rating.Nickname.ToLower().Contains(query.ToLower())) ||
+                                (rating.Description != null &&
+                                rating.Description.ToLower().Contains(query.ToLower())));
 
             return Json(q.ToList());
         }
