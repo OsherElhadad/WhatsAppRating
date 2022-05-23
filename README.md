@@ -27,7 +27,7 @@ Note: We are working with .NET version 6.0.1.
 	  Please make sure it is installed. 
 
 Make sure to start the Web Api side. You can follow the instructions on here: https://github.com/OsherElhadad/WhatsAppApiServer
-Make sure to start the React web side. You can follow the instructions on here: https://github.com/yossix07/whats-app-web-ex2
+Make sure to start the React web side. You can follow the instructions on here: https://github.com/yossix07/WhatsAppReactClient
 
 Now you are ready to start!
 In oreder to run the mvc ratings project, open the project with IDE (like visual studio 2022) and press on run.
