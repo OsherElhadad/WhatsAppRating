@@ -36,8 +36,8 @@ All you need to do now is to wait for the web to open on you browser.
 
 ## Index Page
 
-* This is the home page.
-* Has button that redirects to WhatsApp web (You can find more information about this page on here: https://github.com/OsherElhadad/WhatsAppApiServer).
+* This is the home page http://localhost:5266/Ratings/Index.
+* Has button that redirects to WhatsApp web (You can find more information about this page on here: https://github.com/yossix07/whats-app-web-ex2).
 * Has button to Create page (add new rating).
 * Shows the average of the all ratings.
 * Shows the all rating and can be filtered by Nickname or/and Description.
@@ -45,7 +45,7 @@ All you need to do now is to wait for the web to open on you browser.
 
 ## Create Page
 
-* This page allows you to create a new rating.
+* This page allows you to create a new rating http://localhost:5266/Ratings/Create.
 * The Nickname and rating fields are requierd and the Descriprion is optional. In case one of the mentioned is empty or invalid (will be explanied in a bit), the system won't allow you to create rating.
 * When all required fields are filled and valid, you will be able to submit your request to create rating.
 * Has a link back to index page.
@@ -57,7 +57,7 @@ Fields requirement in-depth:
 
 ## Edit Page
 
-* This page allows you to edit an existing rating.
+* This page allows you to edit an existing rating http://localhost:5266/Ratings/Edit/{Id}.
 * The Nickname and rating fields are requierd and the Descriprion is optional. In case one of the mentioned is empty or invalid (will be explanied in a bit), the system won't allow you to update rating.
 * When all required fields are filled and valid, you will be able to submit your request to update rating.
 * Has a link back to index page.
@@ -69,13 +69,13 @@ Fields requirement in-depth:
 
 ## Delete Page
 
-* This page allows you to delete an existing rating.
+* This page allows you to delete an existing rating http://localhost:5266/Ratings/Delete/{Id}.
 * It shows it's details and has a delete button that delete this rating.
 * Has a link back to index page.
 
 ## Details Page
 
-* This page shows an existing rating.
+* This page shows an existing rating http://localhost:5266/Ratings/Details/{Id}.
 * The Nickname and rating fields are requierd and the Descriprion is optional.
 * Has a link back to index page.
 * Has a link to edit page.
