@@ -79,3 +79,13 @@ Fields requirement in-depth:
 * The Nickname and rating fields are requierd and the Descriprion is optional.
 * Has a link back to index page.
 * Has a link to edit page.
+
+## MariaDB
+
+* There is a database named: WhatsAppRatingDB.
+* There is a table named Ratings with these fields:
+  1) Id (key)- a number (auto increase).
+  2) Description- a string with 0-2000 characters.
+  3) Nickname- a string with 1-100 characters.
+  4) Rate- a number from 1-5.
+  5) Time- a date.
