@@ -1,7 +1,7 @@
 ﻿$(function () {
     $("body").ready(async e => {
         const query = $("#search_input").val();
-        const response = await fetch('Ratings/Search?query=' + query);
+        const response = await fetch('http://localhost:5266/Ratings/Search?query=' + query);
         const items = await response.json();
         if (items == null) {
             return;
@@ -29,7 +29,7 @@
 
     $("#search_input").on('keypress keyup keydown bind' ,async e => {
         const query = $("#search_input").val();
-        const response = await fetch('Ratings/Search?query=' + query);
+        const response = await fetch('http://localhost:5266/Ratings/Search?query=' + query);
         const items = await response.json();
         if (items == null) {
             return;
