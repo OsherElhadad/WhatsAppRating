@@ -38,7 +38,7 @@
             <div class="container">
                 <div class="row">
           <h2 class="accordion-header col-9" id="flush-heading-{id}">
-            <button class="accordion-button collapsed text-center card" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{id}" aria-expanded="false" aria-controls="flush-collapse-{id}">
+            <button class="accordion-button collapsed text-center card-item" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{id}" aria-expanded="false" aria-controls="flush-collapse-{id}">
               <table class="table text-white">
                   <thead>
                       <tr>
@@ -51,7 +51,8 @@
               </table>
             </button>
           </h2>
-          <div class="col">
+          <div class="col-3">
+              </br>
           <a asp-action="Edit" asp-route-id="{id}"><button class="btn btn-secondary">Edit</button></a>
             <a asp-action="Details" asp-route-id="{id}"><button class="btn btn-info">Details</button></a>
             <a asp-action="Delete" asp-route-id="{id}"><button class="btn btn-danger">Delete</button></a>
