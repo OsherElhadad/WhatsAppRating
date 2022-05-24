@@ -1,27 +1,18 @@
 # Getting Started
 
-Clone this repository.
-Open the project with IDE like- visual studio 2022.
-To run this app on your computer please make sure MariaDB is installed. 
-If not, please download it from here: https://mariadb.org/
-
-To work with MariaDB using an Entity Framework, we will 
-use the Pomelo Entity Framework. 
-It is available as a NuGet package here: https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql
+* Make sure MariaDB is installed. If not, please download it from here: https://mariadb.org/
+* Clone this repository.
+* Open the project with IDE like- visual studio 2022 and make sure WhatsAppRating.sln is set as the project solution.
+* To work with MariaDB using an Entity Framework, we will use the Pomelo Entity Framework. It is available as a NuGet package here: https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql <br>
 You can simply open the package manager (PM) console
 (In Visual Studio 2022 -> View -> Other Windows -> Package Manager Console).
+* Next, on the Package Manager Console, please enter the following command: <br> $ Install-Package Pomelo.EntityFrameworkCore.MySql -Version 6.0.1
 
-And enter the following command:
-"Install-Package Pomelo.EntityFrameworkCore.MySql -Version 6.0.1"
-(*without the quotation marks*)
+Then, install the Microsoft Entity Framework Tools package by entering the following command: <br> $ Install-Package Microsoft.EntityFrameworkcore.Tools -version 6.0.1
 
-Then, install the Microsoft Entity Framework Tools package
-by entering the following command:
-"Install-Package Microsoft.EntityFrameworkcore.Tools -version 6.0.1"
-
-Finally create the database:
-  1) Change to your mariaDB password at RatingsContext.cs in connectionString- "...password={your password}..."
-  2) Then apply the migration using: "update-database"
+* Finally create the database:
+  1) Navigate on the cloned directory to: WhatsAppRating\Data\RatingContext.cs and change your mariaDB password in connectionString- "...password={your password}..."
+  2) Apply the migration by entering on the Package Manager Console: $ update-database
 
 Note: We are working with .NET version 6.0.1.
 	  Please make sure it is installed. 
@@ -29,15 +20,15 @@ Note: We are working with .NET version 6.0.1.
 Make sure to start the Web Api side. You can follow the instructions on here: https://github.com/OsherElhadad/WhatsAppApiServer
 Make sure to start the React web side. You can follow the instructions on here: https://github.com/yossix07/WhatsAppReactClient
 
-Now you are ready to start!
-In oreder to run the mvc ratings project, open the project with IDE (like visual studio 2022) and press on run.
+You are ready to start!
+In oreder to run the mvc ratings project, open the project with IDE (like visual studio 2022) and press run.
 <br>
-All you need to do now is to wait for the web to open on you browser.
+All you need to do now is to wait for your browser to open, which indicates that the project is ready and running.
 
 ## Index Page
 
 * This is the home page http://localhost:5266/Ratings/Index.
-* Has button that redirects to WhatsApp web (You can find more information about this page on here: https://github.com/yossix07/whats-app-web-ex2).
+* Has button that redirects to WhatsApp web (You can find more information about this page on here: https://github.com/yossix07/WhatsAppReactClient).
 * Has button to Create page (add new rating).
 * Shows the average of the all ratings.
 * Shows the all rating and can be filtered by Nickname or/and Description.
