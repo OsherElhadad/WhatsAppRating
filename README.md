@@ -14,11 +14,11 @@ You can simply open the package manager (PM) console
   1) Navigate on the cloned directory to: WhatsAppRating\Data\RatingContext.cs and change your mariaDB password in connectionString- "...password={your password}..."
   2) Apply the migration by entering on the Package Manager Console: $ update-database
 
-Note: We are working with .NET version 6.0.1.
+* Note: We are working with .NET version 6.0.1.
 	  Please make sure it is installed. 
 
-Make sure to start the Web Api side. You can follow the instructions on here: https://github.com/OsherElhadad/WhatsAppApiServer
-Make sure to start the React web side. You can follow the instructions on here: https://github.com/yossix07/WhatsAppReactClient
+* Make sure to start the Web Api side. You can follow the instructions on here: https://github.com/OsherElhadad/WhatsAppApiServer <br>
+* Make sure to start the React web side. You can follow the instructions on here: https://github.com/yossix07/WhatsAppReactClient
 
 You are ready to start!
 In oreder to run the mvc ratings project, open the project with IDE (like visual studio 2022) and press run.
