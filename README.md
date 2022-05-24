@@ -8,7 +8,7 @@ You can simply open the package manager (PM) console
 (In Visual Studio 2022 -> View -> Other Windows -> Package Manager Console).
 * Next, on the Package Manager Console, please enter the following command: <br> $ Install-Package Pomelo.EntityFrameworkCore.MySql -Version 6.0.1
 
-Then, install the Microsoft Entity Framework Tools package by entering the following command: <br> $ Install-Package Microsoft.EntityFrameworkcore.Tools -version 6.0.1
+* Then, install the Microsoft Entity Framework Tools package by entering the following command: <br> $ Install-Package Microsoft.EntityFrameworkcore.Tools -version 6.0.1
 
 * Finally create the database:
   1) Navigate on the cloned directory to: WhatsAppRating\Data\RatingContext.cs and change your mariaDB password in connectionString- "...password={your password}..."
